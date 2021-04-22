@@ -1,0 +1,9 @@
+scripts/compose/
+scripts/docker/
+scripts/k8s/
+.dockerignore
+.gitgnore
+docker-compose.yml
+LICENSE
+makefile
+README.md
