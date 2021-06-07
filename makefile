@@ -8,7 +8,7 @@ SHELL := /bin/bash
 # For testing a simple query on the system. Don't forget to add a user to the mongodb
 # curl -d '{"name":"justyn", "email":"justyn@test.com", "roles":["ADMIN","USER"], "password":"mypass", "password_confirm":"mypass"}' -H "Content-Type: application/json" -X POST http://localhost:3000/v1/users
 
-# curl --user "justyn@test.com" http://localhost:3000/v1/users/token/54bb2165-71e1-41a6-af3e-7da4a0e1e2c1
+# curl --user "justyn@test.com:mypass" http://localhost:3000/v1/users/token/54bb2165-71e1-41a6-af3e-7da4a0e1e2c1
 
 # export TOKEN="COPY TOKEN STRING FROM LAST CALL"
 
