@@ -21,7 +21,7 @@ spec:
         - name: zipkin
           containerPort: 9411
       - name: app
-        image: drop-api-amd64:1.0
+        image: adeniyistephen/drop-api-amd64:1.0
         env:
         - name: MONGODB_HOST
           value: "mongo:27017"
@@ -66,7 +66,7 @@ spec:
           periodSeconds: 15
           timeoutSeconds: 5
       - name: metrics
-        image: metrics-amd64:1.0
+        image: adeniyistephen/metrics-amd64:1.0
         env:
         - name: METRICS_COLLECT_FROM
           valueFrom:
