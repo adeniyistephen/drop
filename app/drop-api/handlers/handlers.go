@@ -44,14 +44,14 @@ func API(build string, shutdown chan os.Signal, log *log.Logger, a *auth.Auth, d
 		build: build,
 		db:    db,
 	}
-	
+
 	app.HandleDebug(http.MethodGet, "/readiness", cg.readiness)
 	app.HandleDebug(http.MethodGet, "/liveness", cg.liveness)
 
 	// Register user management and authentication endpoints.
 	ug := userGroup{
 		user: user.New(log, db),
-		auth:  a,
+		auth: a,
 	}
 
 	app.Handle(http.MethodGet, "/v1/users/:page/:rows", ug.query, mid.Authenticate(a), mid.Authorize(auth.RoleAdmin)) //<== you can't do this if you are not an admin and are not yet authenticated. so he used the get token with his id as kid to generate token

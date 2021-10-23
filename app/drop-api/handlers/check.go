@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"os"
 	"time"
-	
+
 	"github.com/nextwavedevs/drop/foundation/web"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.opentelemetry.io/otel/trace"
@@ -16,10 +16,10 @@ type checkGroup struct {
 	db    *mongo.Client
 }
 
-func (cg checkGroup)readiness(ctx context.Context, w http.ResponseWriter, r *http.Request) error {
+func (cg checkGroup) readiness(ctx context.Context, w http.ResponseWriter, r *http.Request) error {
 	ctx, span := trace.SpanFromContext(ctx).Tracer().Start(ctx, "handlers.check.readiness")
 	defer span.End()
-	
+
 	ctx, cancel := context.WithTimeout(ctx, time.Second)
 	defer cancel()
 

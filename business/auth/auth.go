@@ -1,6 +1,6 @@
 package auth
 
-import(
+import (
 	"crypto/rsa"
 
 	"github.com/dgrijalva/jwt-go/v4"

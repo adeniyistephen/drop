@@ -15,7 +15,6 @@ import (
 	"go.opentelemetry.io/otel/trace"
 )
 
-
 type studioGroup struct {
 	studio studio.Studio
 }

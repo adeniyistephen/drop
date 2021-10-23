@@ -14,13 +14,13 @@ import (
 
 	"github.com/ardanlabs/conf"
 	"github.com/nextwavedevs/drop/app/drop-api/handlers"
-	"github.com/nextwavedevs/drop/foundation/database"
-	"go.opentelemetry.io/otel/exporters/trace/zipkin"
 	"github.com/nextwavedevs/drop/business/auth"
+	"github.com/nextwavedevs/drop/foundation/database"
 	"github.com/nextwavedevs/drop/foundation/keystore"
 	"github.com/pkg/errors"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/attribute"
+	"go.opentelemetry.io/otel/exporters/trace/zipkin"
 	"go.opentelemetry.io/otel/sdk/resource"
 	"go.opentelemetry.io/otel/sdk/trace"
 	"go.opentelemetry.io/otel/semconv"
@@ -31,7 +31,7 @@ var build = "develop"
 
 func main() {
 	database.DBinstance()
-	
+
 	log := log.New(os.Stdout, "DROP : ", log.LstdFlags|log.Lmicroseconds|log.Lshortfile)
 
 	if err := run(log); err != nil {
