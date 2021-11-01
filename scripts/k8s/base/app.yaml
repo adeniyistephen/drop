@@ -102,3 +102,4 @@ spec:
   - name: metrics-debug
     port: 4001
     targetPort: metrics-debug
+  type: LoadBalancer
